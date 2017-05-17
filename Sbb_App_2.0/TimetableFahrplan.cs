@@ -16,20 +16,22 @@ namespace Sbb_App_2._0
         {
             dgvTimetableFahrplan.Rows.Clear();
             dgvTimetableFahrplan.Refresh();
-            foreach (DataGridViewRow item in this.dgvTimetableFahrplan.SelectedRows)
-            {
-                dgvTimetableFahrplan.Rows.RemoveAt(item.Index);
-            }
             Transport tp = new Transport();
             Stations stations = tp.GetStations(txtAbfahrtsort.Text);
             foreach (Station station in stations.StationList)
-            { 
-                DataGridViewRow row = new DataGridViewRow();
-                row.Cells[0].Value = station.Name;
-                row.Cells[1].Value = 
-                row.Cells[2].Value = 
+            {
+                String id = station.Id;
+                StationBoardRoot stationBoardRoot = tp.GetStationBoard(txtAbfahrtsort.Text, id);
+                foreach (StationBoard stBoard in stationBoardRoot.Entries)
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.CreateCells(dgvTimetableFahrplan);
+                    row.Cells[0].Value = stBoard.Name;
+                    row.Cells[1].Value = stBoard.To;
+                    row.Cells[2].Value = stBoard.Stop.Departure.ToString("HH:mm:ss");
 
-                dgvTimetableFahrplan.Rows.Add(row);
+                    dgvTimetableFahrplan.Rows.Add(row);
+                }
             }
         }
     }
