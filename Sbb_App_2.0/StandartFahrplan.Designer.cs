@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.gbStandart = new System.Windows.Forms.GroupBox();
+            this.txtNach = new System.Windows.Forms.TextBox();
+            this.txtVon = new System.Windows.Forms.TextBox();
+            this.btnSuchen = new System.Windows.Forms.Button();
+            this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.lblDatum = new System.Windows.Forms.Label();
             this.lblNach = new System.Windows.Forms.Label();
             this.lblVon = new System.Windows.Forms.Label();
-            this.dtpDatum = new System.Windows.Forms.DateTimePicker();
-            this.btnSuchen = new System.Windows.Forms.Button();
             this.dgvStandartFahrplan = new System.Windows.Forms.DataGridView();
             this.abfahrtsortColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zielortColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abfahrtszeitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ankunftszeitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dauerColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtVon = new System.Windows.Forms.TextBox();
-            this.txtNach = new System.Windows.Forms.TextBox();
             this.gbStandart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStandartFahrplan)).BeginInit();
             this.SuspendLayout();
@@ -60,10 +60,48 @@
             this.gbStandart.Controls.Add(this.lblVon);
             this.gbStandart.Location = new System.Drawing.Point(19, 23);
             this.gbStandart.Name = "gbStandart";
-            this.gbStandart.Size = new System.Drawing.Size(786, 302);
+            this.gbStandart.Size = new System.Drawing.Size(934, 302);
             this.gbStandart.TabIndex = 0;
             this.gbStandart.TabStop = false;
             this.gbStandart.Text = "Fahrplan ";
+            // 
+            // txtNach
+            // 
+            this.txtNach.Location = new System.Drawing.Point(161, 106);
+            this.txtNach.Name = "txtNach";
+            this.txtNach.Size = new System.Drawing.Size(249, 22);
+            this.txtNach.TabIndex = 8;
+            // 
+            // txtVon
+            // 
+            this.txtVon.Location = new System.Drawing.Point(161, 37);
+            this.txtVon.Name = "txtVon";
+            this.txtVon.Size = new System.Drawing.Size(249, 22);
+            this.txtVon.TabIndex = 7;
+            // 
+            // btnSuchen
+            // 
+            this.btnSuchen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSuchen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnSuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuchen.Location = new System.Drawing.Point(501, 36);
+            this.btnSuchen.Name = "btnSuchen";
+            this.btnSuchen.Size = new System.Drawing.Size(186, 92);
+            this.btnSuchen.TabIndex = 6;
+            this.btnSuchen.Text = "Verbindung suchen";
+            this.btnSuchen.UseVisualStyleBackColor = true;
+            this.btnSuchen.Click += new System.EventHandler(this.btnSuchen_Click);
+            // 
+            // dtpDatum
+            // 
+            this.dtpDatum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpDatum.Location = new System.Drawing.Point(161, 206);
+            this.dtpDatum.Name = "dtpDatum";
+            this.dtpDatum.Size = new System.Drawing.Size(249, 22);
+            this.dtpDatum.TabIndex = 5;
             // 
             // lblDatum
             // 
@@ -101,30 +139,6 @@
             this.lblVon.TabIndex = 0;
             this.lblVon.Text = "Von";
             // 
-            // dtpDatum
-            // 
-            this.dtpDatum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpDatum.Location = new System.Drawing.Point(161, 206);
-            this.dtpDatum.Name = "dtpDatum";
-            this.dtpDatum.Size = new System.Drawing.Size(249, 22);
-            this.dtpDatum.TabIndex = 5;
-            // 
-            // btnSuchen
-            // 
-            this.btnSuchen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSuchen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnSuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuchen.Location = new System.Drawing.Point(501, 36);
-            this.btnSuchen.Name = "btnSuchen";
-            this.btnSuchen.Size = new System.Drawing.Size(186, 92);
-            this.btnSuchen.TabIndex = 6;
-            this.btnSuchen.Text = "Verbindung suchen";
-            this.btnSuchen.UseVisualStyleBackColor = true;
-            this.btnSuchen.Click += new System.EventHandler(this.btnSuchen_Click);
-            // 
             // dgvStandartFahrplan
             // 
             this.dgvStandartFahrplan.AllowUserToAddRows = false;
@@ -145,15 +159,15 @@
             this.dgvStandartFahrplan.ReadOnly = true;
             this.dgvStandartFahrplan.RowHeadersVisible = false;
             this.dgvStandartFahrplan.RowTemplate.Height = 24;
-            this.dgvStandartFahrplan.Size = new System.Drawing.Size(762, 231);
+            this.dgvStandartFahrplan.Size = new System.Drawing.Size(934, 231);
             this.dgvStandartFahrplan.TabIndex = 1;
             // 
             // abfahrtsortColumn
             // 
-            this.abfahrtsortColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.abfahrtsortColumn.HeaderText = "Abfahrtsort";
             this.abfahrtsortColumn.Name = "abfahrtsortColumn";
             this.abfahrtsortColumn.ReadOnly = true;
+            this.abfahrtsortColumn.Width = 186;
             // 
             // zielortColumn
             // 
@@ -183,20 +197,6 @@
             this.dauerColumn.Name = "dauerColumn";
             this.dauerColumn.ReadOnly = true;
             // 
-            // txtVon
-            // 
-            this.txtVon.Location = new System.Drawing.Point(161, 37);
-            this.txtVon.Name = "txtVon";
-            this.txtVon.Size = new System.Drawing.Size(249, 22);
-            this.txtVon.TabIndex = 7;
-            // 
-            // txtNach
-            // 
-            this.txtNach.Location = new System.Drawing.Point(161, 106);
-            this.txtNach.Name = "txtNach";
-            this.txtNach.Size = new System.Drawing.Size(249, 22);
-            this.txtNach.TabIndex = 8;
-            // 
             // StandartFahrplan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -205,7 +205,7 @@
             this.Controls.Add(this.dgvStandartFahrplan);
             this.Controls.Add(this.gbStandart);
             this.Name = "StandartFahrplan";
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Size = new System.Drawing.Size(972, 600);
             this.gbStandart.ResumeLayout(false);
             this.gbStandart.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStandartFahrplan)).EndInit();
@@ -221,13 +221,13 @@
         private System.Windows.Forms.Label lblVon;
         private System.Windows.Forms.Button btnSuchen;
         private System.Windows.Forms.DateTimePicker dtpDatum;
+        private System.Windows.Forms.TextBox txtNach;
+        private System.Windows.Forms.TextBox txtVon;
         private System.Windows.Forms.DataGridView dgvStandartFahrplan;
         private System.Windows.Forms.DataGridViewTextBoxColumn abfahrtsortColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn zielortColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn abfahrtszeitColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ankunftszeitColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dauerColumn;
-        private System.Windows.Forms.TextBox txtNach;
-        private System.Windows.Forms.TextBox txtVon;
     }
 }

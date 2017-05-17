@@ -47,7 +47,7 @@
             this.gbTimetable.Controls.Add(this.lblAbfahrtsort);
             this.gbTimetable.Location = new System.Drawing.Point(28, 26);
             this.gbTimetable.Name = "gbTimetable";
-            this.gbTimetable.Size = new System.Drawing.Size(786, 251);
+            this.gbTimetable.Size = new System.Drawing.Size(861, 251);
             this.gbTimetable.TabIndex = 0;
             this.gbTimetable.TabStop = false;
             this.gbTimetable.Text = "Fahrplan";
@@ -97,7 +97,7 @@
             this.dgvStandartFahrplan.ReadOnly = true;
             this.dgvStandartFahrplan.RowHeadersVisible = false;
             this.dgvStandartFahrplan.RowTemplate.Height = 24;
-            this.dgvStandartFahrplan.Size = new System.Drawing.Size(745, 286);
+            this.dgvStandartFahrplan.Size = new System.Drawing.Size(861, 286);
             this.dgvStandartFahrplan.TabIndex = 2;
             // 
             // abfahrtsortColumn
@@ -129,7 +129,7 @@
             this.Controls.Add(this.dgvStandartFahrplan);
             this.Controls.Add(this.gbTimetable);
             this.Name = "TimetableFahrplan";
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Size = new System.Drawing.Size(916, 600);
             this.gbTimetable.ResumeLayout(false);
             this.gbTimetable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStandartFahrplan)).EndInit();

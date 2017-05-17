@@ -64,7 +64,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.userControlPanel.Location = new System.Drawing.Point(1, 126);
             this.userControlPanel.Name = "userControlPanel";
-            this.userControlPanel.Size = new System.Drawing.Size(800, 600);
+            this.userControlPanel.Size = new System.Drawing.Size(973, 600);
             this.userControlPanel.TabIndex = 3;
             // 
             // Overview
@@ -72,7 +72,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(804, 731);
+            this.ClientSize = new System.Drawing.Size(977, 731);
             this.Controls.Add(this.userControlPanel);
             this.Controls.Add(this.btnStandart);
             this.Controls.Add(this.btnTimetable);
