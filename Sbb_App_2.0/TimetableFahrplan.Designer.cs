@@ -32,12 +32,12 @@
             this.txtAbfahrtsort = new System.Windows.Forms.TextBox();
             this.btnSuchen = new System.Windows.Forms.Button();
             this.lblAbfahrtsort = new System.Windows.Forms.Label();
-            this.dgvStandartFahrplan = new System.Windows.Forms.DataGridView();
+            this.dgvTimetableFahrplan = new System.Windows.Forms.DataGridView();
             this.abfahrtsortColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ankunftsortColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abfahrtszeitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbTimetable.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStandartFahrplan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTimetableFahrplan)).BeginInit();
             this.SuspendLayout();
             // 
             // gbTimetable
@@ -69,6 +69,7 @@
             this.btnSuchen.TabIndex = 7;
             this.btnSuchen.Text = "Verbindung suchen";
             this.btnSuchen.UseVisualStyleBackColor = true;
+            this.btnSuchen.Click += new System.EventHandler(this.btnSuchen_Click);
             // 
             // lblAbfahrtsort
             // 
@@ -79,26 +80,26 @@
             this.lblAbfahrtsort.TabIndex = 0;
             this.lblAbfahrtsort.Text = "Abfahrtsort";
             // 
-            // dgvStandartFahrplan
+            // dgvTimetableFahrplan
             // 
-            this.dgvStandartFahrplan.AllowUserToAddRows = false;
-            this.dgvStandartFahrplan.AllowUserToDeleteRows = false;
-            this.dgvStandartFahrplan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvTimetableFahrplan.AllowUserToAddRows = false;
+            this.dgvTimetableFahrplan.AllowUserToDeleteRows = false;
+            this.dgvTimetableFahrplan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvStandartFahrplan.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvStandartFahrplan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStandartFahrplan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTimetableFahrplan.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvTimetableFahrplan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTimetableFahrplan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.abfahrtsortColumn,
             this.ankunftsortColumn,
             this.abfahrtszeitColumn});
-            this.dgvStandartFahrplan.Location = new System.Drawing.Point(28, 296);
-            this.dgvStandartFahrplan.Name = "dgvStandartFahrplan";
-            this.dgvStandartFahrplan.ReadOnly = true;
-            this.dgvStandartFahrplan.RowHeadersVisible = false;
-            this.dgvStandartFahrplan.RowTemplate.Height = 24;
-            this.dgvStandartFahrplan.Size = new System.Drawing.Size(861, 286);
-            this.dgvStandartFahrplan.TabIndex = 2;
+            this.dgvTimetableFahrplan.Location = new System.Drawing.Point(28, 296);
+            this.dgvTimetableFahrplan.Name = "dgvTimetableFahrplan";
+            this.dgvTimetableFahrplan.ReadOnly = true;
+            this.dgvTimetableFahrplan.RowHeadersVisible = false;
+            this.dgvTimetableFahrplan.RowTemplate.Height = 24;
+            this.dgvTimetableFahrplan.Size = new System.Drawing.Size(861, 286);
+            this.dgvTimetableFahrplan.TabIndex = 2;
             // 
             // abfahrtsortColumn
             // 
@@ -126,13 +127,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.dgvStandartFahrplan);
+            this.Controls.Add(this.dgvTimetableFahrplan);
             this.Controls.Add(this.gbTimetable);
             this.Name = "TimetableFahrplan";
             this.Size = new System.Drawing.Size(916, 600);
             this.gbTimetable.ResumeLayout(false);
             this.gbTimetable.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStandartFahrplan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTimetableFahrplan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -142,7 +143,7 @@
         private System.Windows.Forms.GroupBox gbTimetable;
         private System.Windows.Forms.Label lblAbfahrtsort;
         private System.Windows.Forms.Button btnSuchen;
-        private System.Windows.Forms.DataGridView dgvStandartFahrplan;
+        private System.Windows.Forms.DataGridView dgvTimetableFahrplan;
         private System.Windows.Forms.DataGridViewTextBoxColumn abfahrtsortColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ankunftsortColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn abfahrtszeitColumn;

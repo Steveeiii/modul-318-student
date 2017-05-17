@@ -100,7 +100,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDatum.Location = new System.Drawing.Point(161, 206);
             this.dtpDatum.Name = "dtpDatum";
-            this.dtpDatum.Size = new System.Drawing.Size(249, 22);
+            this.dtpDatum.Size = new System.Drawing.Size(218, 22);
             this.dtpDatum.TabIndex = 5;
             // 
             // lblDatum

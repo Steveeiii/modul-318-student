@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SwissTransport;
 
@@ -17,10 +10,15 @@ namespace Sbb_App_2._0
         public StandartFahrplan()
         {
             InitializeComponent();
+
+            dtpDatum.Format = DateTimePickerFormat.Custom;
+            dtpDatum.CustomFormat = "MM/dd/yyyy hh:mm:ss";
         }
 
         private void btnSuchen_Click(object sender, EventArgs e)
         {
+            dgvStandartFahrplan.Rows.Clear();
+            dgvStandartFahrplan.Refresh();
             foreach (DataGridViewRow item in this.dgvStandartFahrplan.SelectedRows)
             {
                 dgvStandartFahrplan.Rows.RemoveAt(item.Index);
@@ -42,5 +40,7 @@ namespace Sbb_App_2._0
             
 
         }
+
+
     }
 }
