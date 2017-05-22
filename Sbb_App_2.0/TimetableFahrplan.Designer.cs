@@ -59,6 +59,7 @@
             this.cbAbfahrtsort.Name = "cbAbfahrtsort";
             this.cbAbfahrtsort.Size = new System.Drawing.Size(249, 24);
             this.cbAbfahrtsort.TabIndex = 14;
+            this.cbAbfahrtsort.DropDown += new System.EventHandler(this.cbAbfahrtsort_Dropdown);
             // 
             // btnSuchen
             // 

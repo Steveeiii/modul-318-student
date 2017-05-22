@@ -19,13 +19,12 @@ namespace Sbb_App_2._0
         {
             dgvStandartFahrplan.Rows.Clear();
             dgvStandartFahrplan.Refresh();
-            foreach (DataGridViewRow item in this.dgvStandartFahrplan.SelectedRows)
-            {
-                dgvStandartFahrplan.Rows.RemoveAt(item.Index);
-            }
+
             //Suche wird gestartet
             Transport tp = new Transport();
-            Connections connections = tp.GetConnections(cbVon.Text, cbNach.Text);
+            string datum = dtpDatum.Value.ToString("yyyy-MM-dd");
+            string zeit = dtpZeit.Value.ToString("HH:mm");
+            Connections connections = tp.GetConnectionsDetailed(cbVon.Text, cbNach.Text, datum, zeit);
             foreach (Connection connection in connections.ConnectionList)
             {
 
@@ -54,7 +53,7 @@ namespace Sbb_App_2._0
 
         private void cbVon_DropDown(object sender, EventArgs e)
         {
-
+            //Helperklasse wird aufgerufen
             AutofillHelper a = new AutofillHelper();
             a.autofill(cbVon);
 
@@ -62,8 +61,14 @@ namespace Sbb_App_2._0
 
         private void cbNach_DropDown(object sender, EventArgs e)
         {
+            //Helperklasse wird aufgerufen
             AutofillHelper a = new AutofillHelper();
             a.autofill(cbNach);
+        }
+
+        private void btnKarteVon_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

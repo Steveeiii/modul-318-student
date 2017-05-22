@@ -30,6 +30,7 @@ namespace Sbb_App_2._0
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StandartFahrplan));
             this.gbStandart = new System.Windows.Forms.GroupBox();
             this.btnWechseln = new System.Windows.Forms.Button();
             this.cbNach = new System.Windows.Forms.ComboBox();
@@ -49,6 +50,8 @@ namespace Sbb_App_2._0
             this.abfahrtszeitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ankunftszeitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dauerColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnKarteNach = new System.Windows.Forms.Button();
+            this.btnKarteVon = new System.Windows.Forms.Button();
             this.gbStandart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStandartFahrplan)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +61,8 @@ namespace Sbb_App_2._0
             this.gbStandart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbStandart.Controls.Add(this.btnKarteVon);
+            this.gbStandart.Controls.Add(this.btnKarteNach);
             this.gbStandart.Controls.Add(this.btnWechseln);
             this.gbStandart.Controls.Add(this.cbNach);
             this.gbStandart.Controls.Add(this.cbVon);
@@ -145,7 +150,7 @@ namespace Sbb_App_2._0
             this.dtpZeit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpZeit.CustomFormat = "hh:mm";
+            this.dtpZeit.CustomFormat = "HH:mm ";
             this.dtpZeit.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpZeit.Location = new System.Drawing.Point(161, 231);
             this.dtpZeit.Name = "dtpZeit";
@@ -159,7 +164,7 @@ namespace Sbb_App_2._0
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSuchen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btnSuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuchen.Location = new System.Drawing.Point(497, 36);
+            this.btnSuchen.Location = new System.Drawing.Point(504, 36);
             this.btnSuchen.Name = "btnSuchen";
             this.btnSuchen.Size = new System.Drawing.Size(186, 92);
             this.btnSuchen.TabIndex = 6;
@@ -172,7 +177,7 @@ namespace Sbb_App_2._0
             this.dtpDatum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpDatum.CustomFormat = "dd.MM.yyyy";
+            this.dtpDatum.CustomFormat = "";
             this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDatum.Location = new System.Drawing.Point(161, 185);
             this.dtpDatum.Name = "dtpDatum";
@@ -273,6 +278,29 @@ namespace Sbb_App_2._0
             this.dauerColumn.Name = "dauerColumn";
             this.dauerColumn.ReadOnly = true;
             // 
+            // btnKarteNach
+            // 
+            this.btnKarteNach.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnKarteNach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKarteNach.Image = ((System.Drawing.Image)(resources.GetObject("btnKarteNach.Image")));
+            this.btnKarteNach.Location = new System.Drawing.Point(99, 95);
+            this.btnKarteNach.Name = "btnKarteNach";
+            this.btnKarteNach.Size = new System.Drawing.Size(42, 41);
+            this.btnKarteNach.TabIndex = 17;
+            this.btnKarteNach.UseVisualStyleBackColor = true;
+            // 
+            // btnKarteVon
+            // 
+            this.btnKarteVon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnKarteVon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKarteVon.Image = ((System.Drawing.Image)(resources.GetObject("btnKarteVon.Image")));
+            this.btnKarteVon.Location = new System.Drawing.Point(99, 27);
+            this.btnKarteVon.Name = "btnKarteVon";
+            this.btnKarteVon.Size = new System.Drawing.Size(42, 41);
+            this.btnKarteVon.TabIndex = 18;
+            this.btnKarteVon.UseVisualStyleBackColor = true;
+            this.btnKarteVon.Click += new System.EventHandler(this.btnKarteVon_Click);
+            // 
             // StandartFahrplan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -310,5 +338,7 @@ namespace Sbb_App_2._0
         private Button btnWechseln;
         private ComboBox cbNach;
         private ComboBox cbVon;
+        private Button btnKarteVon;
+        private Button btnKarteNach;
     }
 }
