@@ -58,7 +58,7 @@
             this.cbAbfahrtsort.Location = new System.Drawing.Point(205, 50);
             this.cbAbfahrtsort.Name = "cbAbfahrtsort";
             this.cbAbfahrtsort.Size = new System.Drawing.Size(249, 24);
-            this.cbAbfahrtsort.TabIndex = 14;
+            this.cbAbfahrtsort.TabIndex = 13;
             this.cbAbfahrtsort.DropDown += new System.EventHandler(this.cbAbfahrtsort_Dropdown);
             // 
             // btnSuchen
@@ -68,7 +68,7 @@
             this.btnSuchen.Location = new System.Drawing.Point(33, 142);
             this.btnSuchen.Name = "btnSuchen";
             this.btnSuchen.Size = new System.Drawing.Size(186, 92);
-            this.btnSuchen.TabIndex = 7;
+            this.btnSuchen.TabIndex = 14;
             this.btnSuchen.Text = "Verbindung suchen";
             this.btnSuchen.UseVisualStyleBackColor = true;
             this.btnSuchen.Click += new System.EventHandler(this.btnSuchen_Click);

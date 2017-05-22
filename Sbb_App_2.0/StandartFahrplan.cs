@@ -54,7 +54,7 @@ namespace Sbb_App_2._0
         private void cbVon_DropDown(object sender, EventArgs e)
         {
             //Helperklasse wird aufgerufen
-            AutofillHelper a = new AutofillHelper();
+            HelperClass a = new HelperClass();
             a.autofill(cbVon);
 
         }
@@ -62,13 +62,25 @@ namespace Sbb_App_2._0
         private void cbNach_DropDown(object sender, EventArgs e)
         {
             //Helperklasse wird aufgerufen
-            AutofillHelper a = new AutofillHelper();
+            HelperClass a = new HelperClass();
             a.autofill(cbNach);
         }
 
         private void btnKarteVon_Click(object sender, EventArgs e)
         {
-            
+            if (cbVon.Text != null || cbVon.Text != "")
+            {
+                HelperClass a = new HelperClass();
+                a.browserOeffnen(cbVon);
+            }
+
         }
+
+        private void btnKarteNach_Click(object sender, EventArgs e)
+        {
+            HelperClass a = new HelperClass();
+            a.browserOeffnen(cbNach);
+        }
+
     }
 }

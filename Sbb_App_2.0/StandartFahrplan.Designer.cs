@@ -88,7 +88,7 @@ namespace Sbb_App_2._0
             this.btnWechseln.Location = new System.Drawing.Point(427, 53);
             this.btnWechseln.Name = "btnWechseln";
             this.btnWechseln.Size = new System.Drawing.Size(49, 50);
-            this.btnWechseln.TabIndex = 15;
+            this.btnWechseln.TabIndex = 7;
             this.btnWechseln.Text = "↨";
             this.btnWechseln.UseVisualStyleBackColor = true;
             this.btnWechseln.Click += new System.EventHandler(this.btnWechseln_Click);
@@ -99,7 +99,7 @@ namespace Sbb_App_2._0
             this.cbNach.Location = new System.Drawing.Point(161, 104);
             this.cbNach.Name = "cbNach";
             this.cbNach.Size = new System.Drawing.Size(249, 24);
-            this.cbNach.TabIndex = 14;
+            this.cbNach.TabIndex = 6;
             this.cbNach.DropDown += new System.EventHandler(this.cbNach_DropDown);
             // 
             // cbVon
@@ -108,7 +108,7 @@ namespace Sbb_App_2._0
             this.cbVon.Location = new System.Drawing.Point(161, 36);
             this.cbVon.Name = "cbVon";
             this.cbVon.Size = new System.Drawing.Size(249, 24);
-            this.cbVon.TabIndex = 13;
+            this.cbVon.TabIndex = 4;
             this.cbVon.DropDown += new System.EventHandler(this.cbVon_DropDown);
             // 
             // rbAnkunft
@@ -117,7 +117,7 @@ namespace Sbb_App_2._0
             this.rbAnkunft.Location = new System.Drawing.Point(322, 232);
             this.rbAnkunft.Name = "rbAnkunft";
             this.rbAnkunft.Size = new System.Drawing.Size(77, 21);
-            this.rbAnkunft.TabIndex = 12;
+            this.rbAnkunft.TabIndex = 11;
             this.rbAnkunft.Text = "Ankunft";
             this.rbAnkunft.UseVisualStyleBackColor = true;
             // 
@@ -128,7 +128,7 @@ namespace Sbb_App_2._0
             this.rbAbfahrt.Location = new System.Drawing.Point(322, 186);
             this.rbAbfahrt.Name = "rbAbfahrt";
             this.rbAbfahrt.Size = new System.Drawing.Size(75, 21);
-            this.rbAbfahrt.TabIndex = 11;
+            this.rbAbfahrt.TabIndex = 10;
             this.rbAbfahrt.TabStop = true;
             this.rbAbfahrt.Text = "Abfahrt";
             this.rbAbfahrt.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@ namespace Sbb_App_2._0
             this.btnSuchen.Location = new System.Drawing.Point(504, 36);
             this.btnSuchen.Name = "btnSuchen";
             this.btnSuchen.Size = new System.Drawing.Size(186, 92);
-            this.btnSuchen.TabIndex = 6;
+            this.btnSuchen.TabIndex = 12;
             this.btnSuchen.Text = "Verbindung suchen";
             this.btnSuchen.UseVisualStyleBackColor = true;
             this.btnSuchen.Click += new System.EventHandler(this.btnSuchen_Click);
@@ -182,7 +182,7 @@ namespace Sbb_App_2._0
             this.dtpDatum.Location = new System.Drawing.Point(161, 185);
             this.dtpDatum.Name = "dtpDatum";
             this.dtpDatum.Size = new System.Drawing.Size(124, 22);
-            this.dtpDatum.TabIndex = 5;
+            this.dtpDatum.TabIndex = 8;
             // 
             // lblDatum
             // 
@@ -286,8 +286,9 @@ namespace Sbb_App_2._0
             this.btnKarteNach.Location = new System.Drawing.Point(99, 95);
             this.btnKarteNach.Name = "btnKarteNach";
             this.btnKarteNach.Size = new System.Drawing.Size(42, 41);
-            this.btnKarteNach.TabIndex = 17;
+            this.btnKarteNach.TabIndex = 5;
             this.btnKarteNach.UseVisualStyleBackColor = true;
+            this.btnKarteNach.Click += new System.EventHandler(this.btnKarteNach_Click);
             // 
             // btnKarteVon
             // 
@@ -297,7 +298,7 @@ namespace Sbb_App_2._0
             this.btnKarteVon.Location = new System.Drawing.Point(99, 27);
             this.btnKarteVon.Name = "btnKarteVon";
             this.btnKarteVon.Size = new System.Drawing.Size(42, 41);
-            this.btnKarteVon.TabIndex = 18;
+            this.btnKarteVon.TabIndex = 3;
             this.btnKarteVon.UseVisualStyleBackColor = true;
             this.btnKarteVon.Click += new System.EventHandler(this.btnKarteVon_Click);
             // 
@@ -338,7 +339,7 @@ namespace Sbb_App_2._0
         private Button btnWechseln;
         private ComboBox cbNach;
         private ComboBox cbVon;
-        private Button btnKarteVon;
         private Button btnKarteNach;
+        private Button btnKarteVon;
     }
 }

@@ -38,9 +38,8 @@ namespace Sbb_App_2._0
         private void cbAbfahrtsort_Dropdown(object sender, EventArgs e)
         {
             //Helperklasse wird aufgerufen
-            AutofillHelper a = new AutofillHelper();
+            HelperClass a = new HelperClass();
             a.autofill(cbAbfahrtsort);
         }
-
     }
 }
