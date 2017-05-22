@@ -17,11 +17,11 @@ namespace Sbb_App_2._0
             dgvTimetableFahrplan.Rows.Clear();
             dgvTimetableFahrplan.Refresh();
             Transport tp = new Transport();
-            Stations stations = tp.GetStations(txtAbfahrtsort.Text);
+            Stations stations = tp.GetStations(cbAbfahrtsort.Text);
             foreach (Station station in stations.StationList)
             {
                 String id = station.Id;
-                StationBoardRoot stationBoardRoot = tp.GetStationBoard(txtAbfahrtsort.Text, id);
+                StationBoardRoot stationBoardRoot = tp.GetStationBoard(cbAbfahrtsort.Text, id);
                 foreach (StationBoard stBoard in stationBoardRoot.Entries)
                 {
                     DataGridViewRow row = new DataGridViewRow();
@@ -34,5 +34,13 @@ namespace Sbb_App_2._0
                 }
             }
         }
+
+        private void cbAbfahrtsort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            AutofillHelper a = new AutofillHelper();
+            a.autofill(cbAbfahrtsort);
+        }
+
     }
 }

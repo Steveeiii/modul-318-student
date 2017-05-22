@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using SwissTransport;
+using System.Net;
+using System.Collections.Generic;
 
 namespace Sbb_App_2._0
 {
@@ -11,8 +13,6 @@ namespace Sbb_App_2._0
         {
             InitializeComponent();
 
-            dtpDatum.Format = DateTimePickerFormat.Custom;
-            dtpDatum.CustomFormat = "MM/dd/yyyy hh:mm:ss";
         }
 
         private void btnSuchen_Click(object sender, EventArgs e)
@@ -23,10 +23,13 @@ namespace Sbb_App_2._0
             {
                 dgvStandartFahrplan.Rows.RemoveAt(item.Index);
             }
+            //Suche wird gestartet
             Transport tp = new Transport();
-            Connections connections = tp.GetConnections(txtVon.Text, txtNach.Text);
+            Connections connections = tp.GetConnections(cbVon.Text, cbNach.Text);
             foreach (Connection connection in connections.ConnectionList)
             {
+
+                //DataGrind wird abgefüllt
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dgvStandartFahrplan);
                 String endDauer = connection.Duration.Remove(0, 3);
@@ -37,10 +40,30 @@ namespace Sbb_App_2._0
                 row.Cells[4].Value = Convert.ToDateTime(endDauer).ToString("HH:mm:ss");
                 dgvStandartFahrplan.Rows.Add(row);
             }
-            
 
         }
 
+        private void btnWechseln_Click(object sender, EventArgs e)
+        {
+            //Inhalt der Comboxen wechseln
 
+            String wechselVon = cbVon.Text;
+            cbVon.Text = cbNach.Text;
+            cbNach.Text = wechselVon;
+        }
+
+        private void cbVon_DropDown(object sender, EventArgs e)
+        {
+
+            AutofillHelper a = new AutofillHelper();
+            a.autofill(cbVon);
+
+        }
+
+        private void cbNach_DropDown(object sender, EventArgs e)
+        {
+            AutofillHelper a = new AutofillHelper();
+            a.autofill(cbNach);
+        }
     }
 }

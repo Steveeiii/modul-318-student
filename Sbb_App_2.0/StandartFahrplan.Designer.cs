@@ -1,4 +1,6 @@
-﻿namespace Sbb_App_2._0
+﻿using System.Windows.Forms;
+
+namespace Sbb_App_2._0
 {
     partial class StandartFahrplan
     {
@@ -29,8 +31,13 @@
         private void InitializeComponent()
         {
             this.gbStandart = new System.Windows.Forms.GroupBox();
-            this.txtNach = new System.Windows.Forms.TextBox();
-            this.txtVon = new System.Windows.Forms.TextBox();
+            this.btnWechseln = new System.Windows.Forms.Button();
+            this.cbNach = new System.Windows.Forms.ComboBox();
+            this.cbVon = new System.Windows.Forms.ComboBox();
+            this.rbAnkunft = new System.Windows.Forms.RadioButton();
+            this.rbAbfahrt = new System.Windows.Forms.RadioButton();
+            this.lblZeit = new System.Windows.Forms.Label();
+            this.dtpZeit = new System.Windows.Forms.DateTimePicker();
             this.btnSuchen = new System.Windows.Forms.Button();
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.lblDatum = new System.Windows.Forms.Label();
@@ -51,8 +58,13 @@
             this.gbStandart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbStandart.Controls.Add(this.txtNach);
-            this.gbStandart.Controls.Add(this.txtVon);
+            this.gbStandart.Controls.Add(this.btnWechseln);
+            this.gbStandart.Controls.Add(this.cbNach);
+            this.gbStandart.Controls.Add(this.cbVon);
+            this.gbStandart.Controls.Add(this.rbAnkunft);
+            this.gbStandart.Controls.Add(this.rbAbfahrt);
+            this.gbStandart.Controls.Add(this.lblZeit);
+            this.gbStandart.Controls.Add(this.dtpZeit);
             this.gbStandart.Controls.Add(this.btnSuchen);
             this.gbStandart.Controls.Add(this.dtpDatum);
             this.gbStandart.Controls.Add(this.lblDatum);
@@ -65,19 +77,81 @@
             this.gbStandart.TabStop = false;
             this.gbStandart.Text = "Fahrplan ";
             // 
-            // txtNach
+            // btnWechseln
             // 
-            this.txtNach.Location = new System.Drawing.Point(161, 106);
-            this.txtNach.Name = "txtNach";
-            this.txtNach.Size = new System.Drawing.Size(249, 22);
-            this.txtNach.TabIndex = 8;
+            this.btnWechseln.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWechseln.Location = new System.Drawing.Point(427, 53);
+            this.btnWechseln.Name = "btnWechseln";
+            this.btnWechseln.Size = new System.Drawing.Size(49, 50);
+            this.btnWechseln.TabIndex = 15;
+            this.btnWechseln.Text = "↨";
+            this.btnWechseln.UseVisualStyleBackColor = true;
+            this.btnWechseln.Click += new System.EventHandler(this.btnWechseln_Click);
             // 
-            // txtVon
+            // cbNach
             // 
-            this.txtVon.Location = new System.Drawing.Point(161, 37);
-            this.txtVon.Name = "txtVon";
-            this.txtVon.Size = new System.Drawing.Size(249, 22);
-            this.txtVon.TabIndex = 7;
+            this.cbNach.FormattingEnabled = true;
+            this.cbNach.Location = new System.Drawing.Point(161, 104);
+            this.cbNach.Name = "cbNach";
+            this.cbNach.Size = new System.Drawing.Size(249, 24);
+            this.cbNach.TabIndex = 14;
+            this.cbNach.DropDown += new System.EventHandler(this.cbNach_DropDown);
+            // 
+            // cbVon
+            // 
+            this.cbVon.FormattingEnabled = true;
+            this.cbVon.Location = new System.Drawing.Point(161, 36);
+            this.cbVon.Name = "cbVon";
+            this.cbVon.Size = new System.Drawing.Size(249, 24);
+            this.cbVon.TabIndex = 13;
+            this.cbVon.DropDown += new System.EventHandler(this.cbVon_DropDown);
+            // 
+            // rbAnkunft
+            // 
+            this.rbAnkunft.AutoSize = true;
+            this.rbAnkunft.Location = new System.Drawing.Point(322, 232);
+            this.rbAnkunft.Name = "rbAnkunft";
+            this.rbAnkunft.Size = new System.Drawing.Size(77, 21);
+            this.rbAnkunft.TabIndex = 12;
+            this.rbAnkunft.Text = "Ankunft";
+            this.rbAnkunft.UseVisualStyleBackColor = true;
+            // 
+            // rbAbfahrt
+            // 
+            this.rbAbfahrt.AutoSize = true;
+            this.rbAbfahrt.Checked = true;
+            this.rbAbfahrt.Location = new System.Drawing.Point(322, 186);
+            this.rbAbfahrt.Name = "rbAbfahrt";
+            this.rbAbfahrt.Size = new System.Drawing.Size(75, 21);
+            this.rbAbfahrt.TabIndex = 11;
+            this.rbAbfahrt.TabStop = true;
+            this.rbAbfahrt.Text = "Abfahrt";
+            this.rbAbfahrt.UseVisualStyleBackColor = true;
+            // 
+            // lblZeit
+            // 
+            this.lblZeit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblZeit.AutoSize = true;
+            this.lblZeit.Location = new System.Drawing.Point(19, 236);
+            this.lblZeit.Name = "lblZeit";
+            this.lblZeit.Size = new System.Drawing.Size(53, 17);
+            this.lblZeit.TabIndex = 10;
+            this.lblZeit.Text = "Uhrzeit";
+            // 
+            // dtpZeit
+            // 
+            this.dtpZeit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpZeit.CustomFormat = "hh:mm";
+            this.dtpZeit.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpZeit.Location = new System.Drawing.Point(161, 231);
+            this.dtpZeit.Name = "dtpZeit";
+            this.dtpZeit.ShowUpDown = true;
+            this.dtpZeit.Size = new System.Drawing.Size(124, 22);
+            this.dtpZeit.TabIndex = 9;
             // 
             // btnSuchen
             // 
@@ -85,7 +159,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSuchen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btnSuchen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuchen.Location = new System.Drawing.Point(501, 36);
+            this.btnSuchen.Location = new System.Drawing.Point(497, 36);
             this.btnSuchen.Name = "btnSuchen";
             this.btnSuchen.Size = new System.Drawing.Size(186, 92);
             this.btnSuchen.TabIndex = 6;
@@ -98,9 +172,11 @@
             this.dtpDatum.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpDatum.Location = new System.Drawing.Point(161, 206);
+            this.dtpDatum.CustomFormat = "dd.MM.yyyy";
+            this.dtpDatum.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDatum.Location = new System.Drawing.Point(161, 185);
             this.dtpDatum.Name = "dtpDatum";
-            this.dtpDatum.Size = new System.Drawing.Size(218, 22);
+            this.dtpDatum.Size = new System.Drawing.Size(124, 22);
             this.dtpDatum.TabIndex = 5;
             // 
             // lblDatum
@@ -109,11 +185,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDatum.AutoSize = true;
-            this.lblDatum.Location = new System.Drawing.Point(19, 211);
+            this.lblDatum.Location = new System.Drawing.Point(19, 190);
             this.lblDatum.Name = "lblDatum";
-            this.lblDatum.Size = new System.Drawing.Size(77, 17);
+            this.lblDatum.Size = new System.Drawing.Size(49, 17);
             this.lblDatum.TabIndex = 2;
-            this.lblDatum.Text = "Datum/Zeit";
+            this.lblDatum.Text = "Datum";
             // 
             // lblNach
             // 
@@ -221,13 +297,18 @@
         private System.Windows.Forms.Label lblVon;
         private System.Windows.Forms.Button btnSuchen;
         private System.Windows.Forms.DateTimePicker dtpDatum;
-        private System.Windows.Forms.TextBox txtNach;
-        private System.Windows.Forms.TextBox txtVon;
         private System.Windows.Forms.DataGridView dgvStandartFahrplan;
         private System.Windows.Forms.DataGridViewTextBoxColumn abfahrtsortColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn zielortColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn abfahrtszeitColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ankunftszeitColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dauerColumn;
+        private System.Windows.Forms.Label lblZeit;
+        private DateTimePicker dtpZeit;
+        private RadioButton rbAnkunft;
+        private RadioButton rbAbfahrt;
+        private Button btnWechseln;
+        private ComboBox cbNach;
+        private ComboBox cbVon;
     }
 }

@@ -37,7 +37,7 @@
             // 
             this.btnTimetable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightGray;
             this.btnTimetable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTimetable.Location = new System.Drawing.Point(522, 21);
+            this.btnTimetable.Location = new System.Drawing.Point(669, 21);
             this.btnTimetable.Name = "btnTimetable";
             this.btnTimetable.Size = new System.Drawing.Size(213, 82);
             this.btnTimetable.TabIndex = 1;

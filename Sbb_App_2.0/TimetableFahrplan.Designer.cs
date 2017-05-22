@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.gbTimetable = new System.Windows.Forms.GroupBox();
-            this.txtAbfahrtsort = new System.Windows.Forms.TextBox();
+            this.cbAbfahrtsort = new System.Windows.Forms.ComboBox();
             this.btnSuchen = new System.Windows.Forms.Button();
             this.lblAbfahrtsort = new System.Windows.Forms.Label();
             this.dgvTimetableFahrplan = new System.Windows.Forms.DataGridView();
-            this.abfahrtsortColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VerbindungColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ankunftsortColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abfahrtszeitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbTimetable.SuspendLayout();
@@ -42,7 +42,7 @@
             // 
             // gbTimetable
             // 
-            this.gbTimetable.Controls.Add(this.txtAbfahrtsort);
+            this.gbTimetable.Controls.Add(this.cbAbfahrtsort);
             this.gbTimetable.Controls.Add(this.btnSuchen);
             this.gbTimetable.Controls.Add(this.lblAbfahrtsort);
             this.gbTimetable.Location = new System.Drawing.Point(28, 26);
@@ -52,12 +52,13 @@
             this.gbTimetable.TabStop = false;
             this.gbTimetable.Text = "Fahrplan";
             // 
-            // txtAbfahrtsort
+            // cbAbfahrtsort
             // 
-            this.txtAbfahrtsort.Location = new System.Drawing.Point(204, 52);
-            this.txtAbfahrtsort.Name = "txtAbfahrtsort";
-            this.txtAbfahrtsort.Size = new System.Drawing.Size(249, 22);
-            this.txtAbfahrtsort.TabIndex = 8;
+            this.cbAbfahrtsort.FormattingEnabled = true;
+            this.cbAbfahrtsort.Location = new System.Drawing.Point(205, 50);
+            this.cbAbfahrtsort.Name = "cbAbfahrtsort";
+            this.cbAbfahrtsort.Size = new System.Drawing.Size(249, 24);
+            this.cbAbfahrtsort.TabIndex = 14;
             // 
             // btnSuchen
             // 
@@ -90,7 +91,7 @@
             this.dgvTimetableFahrplan.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvTimetableFahrplan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTimetableFahrplan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.abfahrtsortColumn,
+            this.VerbindungColumn,
             this.ankunftsortColumn,
             this.abfahrtszeitColumn});
             this.dgvTimetableFahrplan.Location = new System.Drawing.Point(28, 296);
@@ -101,12 +102,12 @@
             this.dgvTimetableFahrplan.Size = new System.Drawing.Size(861, 286);
             this.dgvTimetableFahrplan.TabIndex = 2;
             // 
-            // abfahrtsortColumn
+            // VerbindungColumn
             // 
-            this.abfahrtsortColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.abfahrtsortColumn.HeaderText = "Abfahrtsort";
-            this.abfahrtsortColumn.Name = "abfahrtsortColumn";
-            this.abfahrtsortColumn.ReadOnly = true;
+            this.VerbindungColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.VerbindungColumn.HeaderText = "Verbindung";
+            this.VerbindungColumn.Name = "VerbindungColumn";
+            this.VerbindungColumn.ReadOnly = true;
             // 
             // ankunftsortColumn
             // 
@@ -144,9 +145,9 @@
         private System.Windows.Forms.Label lblAbfahrtsort;
         private System.Windows.Forms.Button btnSuchen;
         private System.Windows.Forms.DataGridView dgvTimetableFahrplan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abfahrtsortColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VerbindungColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ankunftsortColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn abfahrtszeitColumn;
-        private System.Windows.Forms.TextBox txtAbfahrtsort;
+        private System.Windows.Forms.ComboBox cbAbfahrtsort;
     }
 }
