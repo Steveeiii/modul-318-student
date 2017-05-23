@@ -100,7 +100,7 @@
             this.dgvTimetableFahrplan.ReadOnly = true;
             this.dgvTimetableFahrplan.RowHeadersVisible = false;
             this.dgvTimetableFahrplan.RowTemplate.Height = 24;
-            this.dgvTimetableFahrplan.Size = new System.Drawing.Size(861, 286);
+            this.dgvTimetableFahrplan.Size = new System.Drawing.Size(916, 286);
             this.dgvTimetableFahrplan.TabIndex = 2;
             // 
             // VerbindungColumn
@@ -132,7 +132,7 @@
             this.Controls.Add(this.dgvTimetableFahrplan);
             this.Controls.Add(this.gbTimetable);
             this.Name = "TimetableFahrplan";
-            this.Size = new System.Drawing.Size(916, 600);
+            this.Size = new System.Drawing.Size(971, 600);
             this.gbTimetable.ResumeLayout(false);
             this.gbTimetable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimetableFahrplan)).EndInit();

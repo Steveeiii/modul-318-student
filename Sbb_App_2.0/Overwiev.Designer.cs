@@ -90,6 +90,7 @@
             this.Controls.Add(this.btnStandart);
             this.Controls.Add(this.btnTimetable);
             this.Name = "Overview";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.userControlPanel.ResumeLayout(false);
             this.userControlPanel.PerformLayout();

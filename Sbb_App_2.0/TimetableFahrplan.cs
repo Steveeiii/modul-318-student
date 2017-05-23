@@ -16,6 +16,7 @@ namespace Sbb_App_2._0
         {
             dgvTimetableFahrplan.Rows.Clear();
             dgvTimetableFahrplan.Refresh();
+
             Transport tp = new Transport();
             Stations stations = tp.GetStations(cbAbfahrtsort.Text);
             foreach (Station station in stations.StationList)
@@ -41,5 +42,14 @@ namespace Sbb_App_2._0
             HelperClass a = new HelperClass();
             a.autofill(cbAbfahrtsort);
         }
+
+        private void btnSuchen_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSuchen_Click(this, new EventArgs());
+            }
+        }
     }
 }
+

@@ -32,11 +32,11 @@ namespace Sbb_App_2._0
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StandartFahrplan));
             this.gbStandart = new System.Windows.Forms.GroupBox();
+            this.btnKarteVon = new System.Windows.Forms.Button();
+            this.btnKarteNach = new System.Windows.Forms.Button();
             this.btnWechseln = new System.Windows.Forms.Button();
             this.cbNach = new System.Windows.Forms.ComboBox();
             this.cbVon = new System.Windows.Forms.ComboBox();
-            this.rbAnkunft = new System.Windows.Forms.RadioButton();
-            this.rbAbfahrt = new System.Windows.Forms.RadioButton();
             this.lblZeit = new System.Windows.Forms.Label();
             this.dtpZeit = new System.Windows.Forms.DateTimePicker();
             this.btnSuchen = new System.Windows.Forms.Button();
@@ -50,8 +50,6 @@ namespace Sbb_App_2._0
             this.abfahrtszeitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ankunftszeitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dauerColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnKarteNach = new System.Windows.Forms.Button();
-            this.btnKarteVon = new System.Windows.Forms.Button();
             this.gbStandart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStandartFahrplan)).BeginInit();
             this.SuspendLayout();
@@ -66,8 +64,6 @@ namespace Sbb_App_2._0
             this.gbStandart.Controls.Add(this.btnWechseln);
             this.gbStandart.Controls.Add(this.cbNach);
             this.gbStandart.Controls.Add(this.cbVon);
-            this.gbStandart.Controls.Add(this.rbAnkunft);
-            this.gbStandart.Controls.Add(this.rbAbfahrt);
             this.gbStandart.Controls.Add(this.lblZeit);
             this.gbStandart.Controls.Add(this.dtpZeit);
             this.gbStandart.Controls.Add(this.btnSuchen);
@@ -81,6 +77,30 @@ namespace Sbb_App_2._0
             this.gbStandart.TabIndex = 0;
             this.gbStandart.TabStop = false;
             this.gbStandart.Text = "Fahrplan ";
+            // 
+            // btnKarteVon
+            // 
+            this.btnKarteVon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnKarteVon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKarteVon.Image = ((System.Drawing.Image)(resources.GetObject("btnKarteVon.Image")));
+            this.btnKarteVon.Location = new System.Drawing.Point(99, 27);
+            this.btnKarteVon.Name = "btnKarteVon";
+            this.btnKarteVon.Size = new System.Drawing.Size(42, 41);
+            this.btnKarteVon.TabIndex = 3;
+            this.btnKarteVon.UseVisualStyleBackColor = true;
+            this.btnKarteVon.Click += new System.EventHandler(this.btnKarteVon_Click);
+            // 
+            // btnKarteNach
+            // 
+            this.btnKarteNach.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnKarteNach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKarteNach.Image = ((System.Drawing.Image)(resources.GetObject("btnKarteNach.Image")));
+            this.btnKarteNach.Location = new System.Drawing.Point(99, 95);
+            this.btnKarteNach.Name = "btnKarteNach";
+            this.btnKarteNach.Size = new System.Drawing.Size(42, 41);
+            this.btnKarteNach.TabIndex = 5;
+            this.btnKarteNach.UseVisualStyleBackColor = true;
+            this.btnKarteNach.Click += new System.EventHandler(this.btnKarteNach_Click);
             // 
             // btnWechseln
             // 
@@ -110,28 +130,6 @@ namespace Sbb_App_2._0
             this.cbVon.Size = new System.Drawing.Size(249, 24);
             this.cbVon.TabIndex = 4;
             this.cbVon.DropDown += new System.EventHandler(this.cbVon_DropDown);
-            // 
-            // rbAnkunft
-            // 
-            this.rbAnkunft.AutoSize = true;
-            this.rbAnkunft.Location = new System.Drawing.Point(322, 232);
-            this.rbAnkunft.Name = "rbAnkunft";
-            this.rbAnkunft.Size = new System.Drawing.Size(77, 21);
-            this.rbAnkunft.TabIndex = 11;
-            this.rbAnkunft.Text = "Ankunft";
-            this.rbAnkunft.UseVisualStyleBackColor = true;
-            // 
-            // rbAbfahrt
-            // 
-            this.rbAbfahrt.AutoSize = true;
-            this.rbAbfahrt.Checked = true;
-            this.rbAbfahrt.Location = new System.Drawing.Point(322, 186);
-            this.rbAbfahrt.Name = "rbAbfahrt";
-            this.rbAbfahrt.Size = new System.Drawing.Size(75, 21);
-            this.rbAbfahrt.TabIndex = 10;
-            this.rbAbfahrt.TabStop = true;
-            this.rbAbfahrt.Text = "Abfahrt";
-            this.rbAbfahrt.UseVisualStyleBackColor = true;
             // 
             // lblZeit
             // 
@@ -171,6 +169,7 @@ namespace Sbb_App_2._0
             this.btnSuchen.Text = "Verbindung suchen";
             this.btnSuchen.UseVisualStyleBackColor = true;
             this.btnSuchen.Click += new System.EventHandler(this.btnSuchen_Click);
+            this.btnSuchen.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnSuchen_KeyDown);
             // 
             // dtpDatum
             // 
@@ -242,6 +241,7 @@ namespace Sbb_App_2._0
             this.dgvStandartFahrplan.RowTemplate.Height = 24;
             this.dgvStandartFahrplan.Size = new System.Drawing.Size(934, 231);
             this.dgvStandartFahrplan.TabIndex = 1;
+            this.dgvStandartFahrplan.TabStop = false;
             // 
             // abfahrtsortColumn
             // 
@@ -278,30 +278,6 @@ namespace Sbb_App_2._0
             this.dauerColumn.Name = "dauerColumn";
             this.dauerColumn.ReadOnly = true;
             // 
-            // btnKarteNach
-            // 
-            this.btnKarteNach.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnKarteNach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKarteNach.Image = ((System.Drawing.Image)(resources.GetObject("btnKarteNach.Image")));
-            this.btnKarteNach.Location = new System.Drawing.Point(99, 95);
-            this.btnKarteNach.Name = "btnKarteNach";
-            this.btnKarteNach.Size = new System.Drawing.Size(42, 41);
-            this.btnKarteNach.TabIndex = 5;
-            this.btnKarteNach.UseVisualStyleBackColor = true;
-            this.btnKarteNach.Click += new System.EventHandler(this.btnKarteNach_Click);
-            // 
-            // btnKarteVon
-            // 
-            this.btnKarteVon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnKarteVon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKarteVon.Image = ((System.Drawing.Image)(resources.GetObject("btnKarteVon.Image")));
-            this.btnKarteVon.Location = new System.Drawing.Point(99, 27);
-            this.btnKarteVon.Name = "btnKarteVon";
-            this.btnKarteVon.Size = new System.Drawing.Size(42, 41);
-            this.btnKarteVon.TabIndex = 3;
-            this.btnKarteVon.UseVisualStyleBackColor = true;
-            this.btnKarteVon.Click += new System.EventHandler(this.btnKarteVon_Click);
-            // 
             // StandartFahrplan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -334,8 +310,6 @@ namespace Sbb_App_2._0
         private System.Windows.Forms.DataGridViewTextBoxColumn dauerColumn;
         private System.Windows.Forms.Label lblZeit;
         private DateTimePicker dtpZeit;
-        private RadioButton rbAnkunft;
-        private RadioButton rbAbfahrt;
         private Button btnWechseln;
         private ComboBox cbNach;
         private ComboBox cbVon;

@@ -82,5 +82,12 @@ namespace Sbb_App_2._0
             a.browserOeffnen(cbNach);
         }
 
+        private void btnSuchen_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSuchen_Click(this, new EventArgs());
+            }
+        }
     }
 }
