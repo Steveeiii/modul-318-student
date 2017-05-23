@@ -70,6 +70,7 @@ namespace Sbb_App_2._0
         {
             if (cbVon.Text != null || cbVon.Text != "")
             {
+                //Helperklasse wird aufgerufen
                 HelperClass a = new HelperClass();
                 a.browserOeffnen(cbVon);
             }
@@ -78,12 +79,14 @@ namespace Sbb_App_2._0
 
         private void btnKarteNach_Click(object sender, EventArgs e)
         {
+            //Helperklasse wird aufgerufen
             HelperClass a = new HelperClass();
             a.browserOeffnen(cbNach);
         }
 
         private void btnSuchen_KeyDown(object sender, KeyEventArgs e)
         {
+            //Code für Enter Taste
             if (e.KeyCode == Keys.Enter)
             {
                 btnSuchen_Click(this, new EventArgs());

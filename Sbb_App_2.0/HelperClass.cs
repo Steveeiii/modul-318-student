@@ -33,10 +33,12 @@ namespace Sbb_App_2._0
         }
         public void browserOeffnen(ComboBox cbBox)
         {
+            //Suche wird gestartet
             Transport tp = new Transport();
             Stations stationVon = tp.GetStations(cbBox.Text);
             foreach (Station station in stationVon.StationList)
             {
+                //Google Maps wird geöffnet und nach Koordinaten gefiltert
                 Coordinate cordinates = station.Coordinate;
                 string xValue = cordinates.XCoordinate.ToString().Replace(",", ".");
                 string yValue = cordinates.YCoordinate.ToString().Replace(",", ".");

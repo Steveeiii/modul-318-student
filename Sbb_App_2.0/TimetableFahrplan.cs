@@ -17,6 +17,7 @@ namespace Sbb_App_2._0
             dgvTimetableFahrplan.Rows.Clear();
             dgvTimetableFahrplan.Refresh();
 
+            //Suche wird gestartet
             Transport tp = new Transport();
             Stations stations = tp.GetStations(cbAbfahrtsort.Text);
             foreach (Station station in stations.StationList)
@@ -25,6 +26,7 @@ namespace Sbb_App_2._0
                 StationBoardRoot stationBoardRoot = tp.GetStationBoard(cbAbfahrtsort.Text, id);
                 foreach (StationBoard stBoard in stationBoardRoot.Entries)
                 {
+                    //DataGrind wird abgefüllt
                     DataGridViewRow row = new DataGridViewRow();
                     row.CreateCells(dgvTimetableFahrplan);
                     row.Cells[0].Value = stBoard.Name;
@@ -47,6 +49,7 @@ namespace Sbb_App_2._0
         {
             if (e.KeyCode == Keys.Enter)
             {
+                //Code für Enter Taste
                 btnSuchen_Click(this, new EventArgs());
             }
         }
